@@ -20,13 +20,13 @@ public class DeptController {
     @Autowired
     private DiscoveryClient client;
 
-    @RequestMapping(value="/dept1/add",method= RequestMethod.POST)
+    @RequestMapping(value="/dept/add",method= RequestMethod.POST)
     public boolean add(@RequestBody Dept dept)
     {
         return service.add(dept);
     }
 
-    @RequestMapping(value="/dept1/get/{id}",method=RequestMethod.GET)
+    @RequestMapping(value="/dept/get/{id}",method=RequestMethod.GET)
     public Dept get(@PathVariable("id") Long id)
     {
         return service.get(id);
@@ -39,7 +39,7 @@ public class DeptController {
     }
 
 
-    @RequestMapping(value = "/dept1/discovery", method = RequestMethod.GET)
+    @RequestMapping(value = "/dept/discovery", method = RequestMethod.GET)
     public Object discovery()
     {
         List<String> list = client.getServices();
